@@ -265,9 +265,11 @@ for using default styles you can use one of static (CSS) or termeh (SCSS) predef
 
 ```SCSS
 // Static
-@import "@termehui/vmodal/dist/style.css";
+@import "@termehui/vmodal/style.css";
+@import "@termehui/vmodal/dist/style.css"; // older node version
 // Termeh
-@import "@termehui/vmodal/dist/style.scss";
+@import "@termehui/vmodal/style.scss";
+@import "@termehui/vmodal/dist/style.scss"; // older node version
 ```
 
 ### Container Styles
