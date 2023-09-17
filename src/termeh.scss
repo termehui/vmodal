@@ -1,0 +1,103 @@
+@use "@termehui/termeh/termeh.scss" as T;
+
+.v-modal-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: T.gap("macro");
+    background: T.var("modal", "overlay", T.var("overlay", "background"));
+    z-index: T.var("modal", "z-index", 1);
+    backdrop-filter: T.var("overlay", "filter");
+    @include T.transition(all);
+
+    &.is-sub {
+        position: absolute;
+        z-index: auto;
+    }
+
+    > .wrapper {
+        display: block;
+        margin: auto;
+        width: auto;
+        height: auto;
+        box-sizing: border-box;
+        max-width: 100%;
+
+        > .v-modal {
+            display: block;
+            max-width: 100%;
+            box-sizing: border-box;
+            user-select: none;
+            padding: T.gap("macro");
+            color: T.variant("base", "color");
+            background: T.variant("base", "box");
+            border-radius: T.var("radius", "normal");
+            width: T.var("modal", "width", 30rem);
+            border: T.var("modal", "border", none);
+            box-shadow: T.var(
+                "modal",
+                "shadow",
+                (
+                    T.shadow(0, 3px, T.color("shade"), false),
+                    T.shadow(0, 6px, T.color("shade"), true)
+                )
+            );
+
+            > :not(:last-child):not(.is-marginless) {
+                margin-bottom: T.gap("macro");
+            }
+
+            > .header {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: bold;
+            }
+
+            &.is-loading {
+                @include T.overlay(
+                    T.var("overlay", "background"),
+                    T.var("overlay", "filter")
+                );
+                @include T.loader(
+                    T.var("spinner", "size"),
+                    T.color("shade"),
+                    T.var("decorator", "size")
+                );
+            }
+
+            @each $name, $gap in T.gaps(T.var("modal", "gaps", ())) {
+                &.is-#{$name}-padded {
+                    padding: $gap;
+
+                    > :not(:last-child):not(.is-marginless) {
+                        margin-bottom: $gap;
+                    }
+                }
+            }
+
+            @each $name, $color in T.colors(T.var("modal", "colors", ())) {
+                &.is-#{$name} {
+                    border: T.var("modal", "#{$name}-border");
+                    box-shadow: T.var("modal", "#{$name}-shadow");
+
+                    > .header {
+                        color: T.variant($name, "readable");
+                    }
+
+                    &.is-loading {
+                        @include T.loader-color($color);
+                    }
+                }
+            }
+        }
+    }
+}

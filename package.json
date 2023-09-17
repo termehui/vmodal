@@ -1,0 +1,67 @@
+{
+    "private": false,
+    "type": "module",
+    "license": "ISC",
+    "version": "1.0.0",
+    "name": "@termehui/vmodal",
+    "description": "Advanced modal for vue 3",
+    "main": "./dist/vmodal.umd.js",
+    "module": "./dist/vmodal.es.js",
+    "types": "./dist/vmodal.d.ts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/vmodal.d.ts",
+                "default": "./dist/vmodal.es.js"
+            },
+            "require": {
+                "types": "./dist/vmodal.d.ts",
+                "default": "./dist/vmodal.umd.js"
+            }
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "vue3",
+        "modal"
+    ],
+    "authors": [
+        {
+            "email": "m.ajamekramy@gmail.com",
+            "homepage": "http://ekramy.ir",
+            "name": "Mojtaba Ekramy",
+            "role": "Developer"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/termehui/vmodal"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build",
+        "prepare": "npm run build",
+        "test": "vitest"
+    },
+    "dependencies": {
+        "@types/animejs": "^3.1.7",
+        "@types/shortid": "^0.0.29",
+        "@termehui/termeh": "^1.0.0",
+        "animejs": "^3.2.1",
+        "shortid": "^2.2.16",
+        "vue": "^3.3.4"
+    },
+    "devDependencies": {
+        "@types/node": "^20.6.2",
+        "@vitejs/plugin-vue": "^4.3.4",
+        "rollup-plugin-copy": "^3.5.0",
+        "sass": "^1.67.0",
+        "typescript": "^5.2.2",
+        "vite": "^4.4.9",
+        "vite-plugin-dts": "^3.5.3",
+        "vitest": "^0.34.4",
+        "vue-tsc": "^1.8.11"
+    }
+}

@@ -1,0 +1,5 @@
+@use "@termehui/termeh/termeh.scss" as T;
+
+@include T.define("font", "family", "calibri");
+@include T.define("font", "size", 13px);
+@include T.define-palette("primary", #289c79);
