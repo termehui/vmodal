@@ -17,6 +17,7 @@
     z-index: T.var("modal", "z-index", 1);
     backdrop-filter: T.var("overlay", "filter");
     @include T.transition(all);
+    @include T.scrollable(T.color("primary"));
 
     &.is-sub {
         position: absolute;

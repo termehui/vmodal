@@ -18,6 +18,7 @@
     backdrop-filter: T.var("overlay", "filter");
     padding: T.gap("macro");
     @include T.transition(all);
+    @include T.scrollable(T.color("primary"));
 
     &.is-sub {
         position: absolute;

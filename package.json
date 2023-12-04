@@ -2,7 +2,7 @@
     "private": false,
     "type": "module",
     "license": "ISC",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "@termehui/vmodal",
     "description": "Advanced modal for vue 3",
     "main": "./dist/vmodal.umd.js",
