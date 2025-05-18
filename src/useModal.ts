@@ -106,6 +106,7 @@ export function useModal(
         destroyModal(globalId);
         options.onClose && options.onClose(mode);
         if (containerModals.value.length > 0) {
+            activeId.value = null;
             activateModal(
                 containerModals.value[containerModals.value.length - 1].globalId
             );
